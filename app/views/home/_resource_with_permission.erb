@@ -1,0 +1,17 @@
+<% if levels != 0 %>
+  <div style="padding: 1rem 0 0 1rem;">
+    <header>
+      Resource content for <%= resource.id %>
+      <% if can?(:update, resource) %>
+        <a href="#">Edit Resource</a>
+      <% end %>
+    </header>
+
+    <section>
+      <%= futurize partial: "home/resource_with_permission", locals: { levels: levels - 1, resource: random_resource }, extends: :div do %>
+        <p>Loading nested resource with permission...</p>
+      <% end %>
+    </section>
+
+  </div>
+<% end %>

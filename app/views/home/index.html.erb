@@ -1,0 +1,14 @@
+<h1>Example</h1>
+<p>Below you will find 3 parent partials which will generate X levels deep of nested resources with a randomized permission to edit that resource</p>
+
+<%= futurize partial: "home/parent", locals: { levels: 5 }, extends: :div do %>
+  <p>Loading parent...</p>
+<% end %>
+
+<%= futurize partial: "home/parent", locals: { levels: 2 }, extends: :div do %>
+  <p>Loading parent...</p>
+<% end %>
+
+<%= futurize partial: "home/parent", locals: { levels: 7 }, extends: :div do %>
+  <p>Loading parent...</p>
+<% end %>

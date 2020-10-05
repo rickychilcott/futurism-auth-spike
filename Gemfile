@@ -12,6 +12,11 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'redis', '~> 4.0'
 
+gem 'futurism'
+gem 'stimulus_reflex', '~> 3.3'
+
+gem 'standardrb'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

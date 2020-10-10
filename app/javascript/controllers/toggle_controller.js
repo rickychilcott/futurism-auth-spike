@@ -24,6 +24,7 @@ export default class extends Controller {
   show(event) {
     if (event) {
       event.preventDefault()
+      event.target.setAttribute("hidden", true)
     }
 
     if (this.hasContentTarget) {

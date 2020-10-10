@@ -1,10 +1,14 @@
 module ApplicationHelper
-  # Fake permission check
-  # Sleep for up to .2 seconds to simulate database lookups
-  def can?(_permission, _resource)
-    sleep 0.2 * rand
+  BASE_PERMISSION_SLEEP_VALUE = 1 # second
 
-    [true, false].sample
+  # Fake permission check
+  # Sleep for random to simulate database lookups
+  def can?(permission, resource)
+    Rails.cache.fetch(["permission", resource, permission], expires_in: 10.minutes) do
+      sleep(BASE_PERMISSION_SLEEP_VALUE * rand)
+
+      [true, false].sample
+    end
   end
 
   def random_resource

@@ -1,7 +1,8 @@
-<h2>Parent Resource</h2>
-
 <div data-controller="toggle">
-  <a href="#" data-action="toggle#show">[Show]</a>
+  <h2>
+    Parent Resource
+    <a href="#" data-action="toggle#show">[Show]</a>
+  </h2>
 
   <div data-target="toggle.content" hidden=true>
     <%= futurize partial: "home/resource_with_permission", locals: { levels: levels, resource: random_resource }, extends: :div do %>

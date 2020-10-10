@@ -16,4 +16,8 @@ module ApplicationHelper
     # and is thread/timing safe
     Resource.find(Resource.pluck(:id).sample)
   end
+
+  def showing_all?
+    params["showAll"].present?
+  end
 end
